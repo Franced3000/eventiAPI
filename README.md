@@ -2,49 +2,43 @@
 
 
 eventiAPI/
-│
-├── src/
-│   ├── config/
-│   │   └── database.ts             *Database configuration using Sequelize*
-│   │
-│   ├── controllers/
-│   │   ├── eventController.ts      *CRUD operations for events*
-│   │   ├── registrationController.ts   *CRUD operations for registrations*
-│   │   └── userController.ts       *CRUD operations for users*
-│   │
-│   ├── models/
-│   │   ├── Event.ts                *Event model*
-│   │   ├── Registration.ts         *Registration model*
-│   │   └── User.ts                 *User model*
-│   │
-│   ├── routes/
-│   │   ├── eventRoutes.ts          *Event routes*
-│   │   ├── registrationRoutes.ts   *Registration routes*
-│   │   └── userRoutes.ts           *User routes*
-│   │
-│   ├── services/
-│   │   ├── eventService.ts         *Business logic for events*
-│   │   ├── registrationService.ts  *Business logic for registrations*
-│   │   └── userService.ts          *Business logic for users*
-│   │
-│   ├── utils/
-│   │   ├── validators.ts           *Input validation utilities*
-│   │   └── hash.ts                 *Password hashing functions*
-│   │
-│   ├── middlewares/
-│   │   ├── authMiddleware.ts       *Authentication middleware*
-│   │   └── errorMiddleware.ts      *Error handling middleware*
-│   │
-│   ├── algorithms/
-│   │   ├── seatAvailability.ts     *Seat availability algorithm*
-│   │   └── statistics.ts           *Participation statistics calculation*
-│   │
-│   ├── app.ts                      *Express application setup*
-│   └── server.ts                   *Server startup script*
-│
-├── .env                            *Environment variables*
-├── .eslintrc.js                    *ESLint configuration*
-├── .gitignore                      *Git ignore file*
-├── package.json                    *NPM package configuration*
-├── tsconfig.json                   *TypeScript configuration*
-└── README.md                       *Project documentation*
+# Sistema di Gestione degli Eventi
+
+Un'applicazione per gestire eventi, utenti e iscrizioni.
+
+## Funzionalità
+
+- **Eventi**: CRUD (creazione, lettura, aggiornamento, cancellazione)
+- **Iscrizioni**: CRUD per gestire iscrizioni a eventi
+- **Utenti**: CRUD per gestire gli utenti
+
+## Configurazione
+
+1. Crea un file `.env` con le seguenti variabili:
+DB_NAME=nome_del_database
+DB_USER=utente_del_database
+DB_PASSWORD=password_del_database
+DB_HOST=localhost
+PORT=3000
+
+2. Installa le dipendenze:
+
+3. Avvia il server in modalità sviluppo:
+npm run dev
+
+
+## Struttura del Progetto
+
+- `src/config`: Configurazione del database
+- `src/controllers`: Logica dei controller per ogni risorsa
+- `src/models`: Modelli Sequelize
+- `src/routes`: Definizione delle rotte
+- `src/services`: Logica di business
+- `src/utils`: Funzioni di utilità
+- `src/middlewares`: Middleware per autenticazione e gestione degli errori
+- `src/algorithms`: Algoritmi per disponibilità posti e statistiche
+
+## Licenza
+
+MIT
+
