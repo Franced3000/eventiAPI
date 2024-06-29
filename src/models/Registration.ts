@@ -1,5 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/database';
+import { Event, User } from './index';
 
 class Registration extends Model {
   public id!: number;
@@ -16,17 +17,15 @@ Registration.init({
   },
   evento_id: {
     type: DataTypes.INTEGER,
-    references: { model: 'Event', key: 'id' },
     allowNull: false,
   },
   utente_id: {
     type: DataTypes.INTEGER,
-    references: { model: 'User', key: 'id' },
     allowNull: false,
   },
   data_iscrizione: {
     type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
+    allowNull: true,
   },
 }, {
   sequelize,

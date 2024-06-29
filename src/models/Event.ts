@@ -22,6 +22,7 @@ Event.init({
   },
   descrizione: {
     type: DataTypes.TEXT,
+    allowNull: true,
   },
   data: {
     type: DataTypes.DATE,
