@@ -1,9 +1,13 @@
 import express from 'express';
-import { createUser } from '../controllers/userController';
+import { createUser, getAllUsers, getUser, updateUser, deleteUser } from '../controllers/userController';
+import { userValidator, idParamValidator } from '../utils/validators';
 
 const router = express.Router();
 
-router.post('/', createUser);
-// Altri percorsi CRUD...
+router.post('/', userValidator, createUser);
+router.get('/', getAllUsers);
+router.get('/:id', idParamValidator, getUser);
+router.put('/:id', idParamValidator, userValidator, updateUser);
+router.delete('/:id', idParamValidator, deleteUser);
 
 export default router;
