@@ -1,4 +1,5 @@
 import Registration from '../models/Registration';
+import sequelize from '../config/database';
 
 export const calculateParticipationStats = async () => {
   const stats = await Registration.findAll({
